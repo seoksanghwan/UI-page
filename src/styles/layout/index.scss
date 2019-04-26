@@ -1,15 +1,25 @@
 #wrap {
-  width: 90%;
-  margin: 0 auto;
+  width: 1000px;
+  margin: 20px auto;
+
+
+  @include mq("tablet") {
+    width: 90%;
+  }
+
+  @include mq("mobile") {
+    width: 90%;
+  }
 
   >section {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     height: 100%;
     display: block;
 
     h2 {
       font-size: 30px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-weight: bold;
     }
 
     .ui-list-box {
@@ -17,20 +27,35 @@
       height: auto;
       display: flex;
 
+      @include mq("mobile") {
+        flex-basis: 50%;
+        flex-wrap: wrap;
+      }
+
       .point-box {
         height: fit-content;
-        flex-basis: 20%;
+        flex-basis: 21%;
         overflow: hidden;
         border-radius: 5px;
-        border: 1px solid rgb(218, 218, 218);
-        margin-right: 10px;
+        border: 1px solid #dadada;
+        margin-right: 15px;
         background: #f5f5f5;
         flex-direction: column;
+
+        @include mq("mobile") {
+          margin-bottom: 15px;
+          flex-basis: 30%;
+        }
 
         &.four-point {
           width: 100%;
           height: 100%;
-          flex-basis: 70%;
+          margin-right: 0;
+          flex-basis: 60%;
+
+          @include mq("mobile") {
+            flex-basis: 70%;
+          }
 
           .rower-box {
             width: 100%;
@@ -57,12 +82,15 @@
                 border: none;
                 display: flex;
                 align-items: center;
+
                 ul {
                   width: fit-content;
-                  flex-basis: 30%;
+                  flex-basis: 32%;
                 }
+
                 small {
                   flex-basis: 25%;
+                  vertical-align: middle;
                 }
               }
             }
@@ -86,7 +114,7 @@
               font-size: 13px;
               display: block;
               font-weight: normal;
-              color: rgb(134, 134, 134);
+              color: #868686;
               margin-bottom: 5px;
             }
           }
@@ -107,18 +135,18 @@
           padding: 7px 8px;
 
           p {
-            color: rgb(241, 30, 65);
+            color: #f11e41;
 
             em {
               text-decoration: line-through;
-              color: rgb(153, 153, 153);
+              color: #999999;
             }
           }
         }
 
         .star-point {
           padding: 7px 8px;
-          border-top: 1px solid rgb(218, 218, 218);
+          border-top: 1px solid #dadada;
 
           ul {
             width: 100%;
@@ -128,12 +156,12 @@
             li {
               flex: 0 0 15px;
               height: 100%;
-              background: rgb(155, 155, 155);
+              background: #9b9b9b;
               border-radius: 100%;
               margin-right: 5px;
 
               &.active {
-                background: orange;
+                background: #ffa500;
               }
             }
           }
@@ -154,6 +182,97 @@
           img {
             width: 100%;
           }
+        }
+      }
+    }
+
+    .caption-box {
+      width: 100%;
+
+      .default-box {
+        width: 100%;
+        display: flex;
+        margin-bottom: 10px;
+
+        .box-section {
+          flex-basis: 100%;
+          position: relative;
+
+          &.active {
+            flex-basis: 90%;
+          }
+
+          textarea {
+            outline: #1ca7df;
+
+            &::placeholder {
+              color: #ac2245;
+              font-weight: bold;
+            }
+
+            &.active {
+              border: 1px solid #1ca7df;
+            }
+
+            &:focus {
+              border: 1px solid #1ca7df;
+            }
+          }
+
+          em {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 12px;
+            color: #808080;
+          }
+        }
+
+        button {
+          flex-basis: 0%;
+          overflow: hidden;
+          height: 100px;
+          display: none;
+          padding: 0;
+          margin: 0;
+          outline: none;
+
+          &.active {
+            flex-basis: 10%;
+            display: block;
+            color: #1ca7df;
+          }
+
+          &:focus {
+            border: 1px solid #1ca7df;
+          }
+        }
+      }
+
+      .readonly-box {
+        width: 100%;
+        position: relative;
+
+        em {
+          position: absolute;
+          bottom: 10px;
+          right: 20px;
+          font-size: 12px;
+          color: #808080;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        padding: 5px 20px;
+        height: 100px;
+        resize: none;
+        font-size: 13px;
+        border: 1px solid #222;
+
+        &:read-only {
+          background: #eee;
+          outline: none;
         }
       }
     }

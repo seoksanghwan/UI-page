@@ -1,0 +1,12 @@
+@mixin mq( $screen ) {
+  @if $screen == "mobile" {
+      @media all and (min-width: 320px) and (max-width: 767px){
+          @content;
+      }
+  }
+  @else if $screen == "tablet" {
+      @media all and (min-width: 768px) and (max-width: 999px){
+          @content;
+      }
+  }
+}

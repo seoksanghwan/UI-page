@@ -13,9 +13,9 @@ yarn install
 
 모듈 설치가 끝났으면 실행시켜주세요
 ```
-npm build
+npm start
 
 or
 
-yarn build
+yarn start
 ```
