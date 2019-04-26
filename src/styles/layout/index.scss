@@ -84,13 +84,14 @@
                 align-items: center;
 
                 ul {
-                  width: fit-content;
-                  flex-basis: 32%;
-                }
-
-                small {
-                  flex-basis: 25%;
-                  vertical-align: middle;
+                  flex-basis: auto;
+                  &::after {
+                    content : '| John Doe';
+                    color : #8d8d8d;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                  }
                 }
               }
             }
@@ -236,6 +237,7 @@
           padding: 0;
           margin: 0;
           outline: none;
+          background:#fff;
 
           &.active {
             flex-basis: 10%;
