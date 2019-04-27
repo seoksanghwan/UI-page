@@ -37,7 +37,8 @@
         background: #f5f5f5;
 
         @include mq("tablet") {
-          width: 31.5%;
+          width: 31.9%;
+          vertical-align: bottom;
 
           &:nth-child(3) {
             margin-right: 0;
@@ -56,7 +57,7 @@
 
           @include mq("tablet") {
             margin-top: 15px;
-            width: 100%;
+            width: 67%;
           }
 
           @include mq("mobile") {
@@ -68,6 +69,7 @@
             height: 100%;
             margin: auto;
             padding: 0px;
+            position: relative;
 
             .box {
               height: 100%;
@@ -76,17 +78,17 @@
 
               &.img-box {
                 width: 40%;
-                height: 100%;
                 position: relative;
               }
 
               &.info-box {
                 width: 59%;
-                height: 100%;
               }
 
               .star-point {
                 border: none;
+                position: absolute;
+                bottom: 5px;
 
                 ul {
                   display: inline-block;
@@ -120,7 +122,7 @@
 
           h3 {
             font-size: 13px;
-            color: #222;
+            color: #333;
             font-weight: bold;
 
             em {
@@ -257,6 +259,7 @@
           background: #fff;
           float: right;
           display: none;
+          border: 1px solid #333;
 
           &.active {
             display: block;
@@ -385,7 +388,8 @@
         height: 100px;
         resize: none;
         font-size: 13px;
-        border: 1px solid #222;
+        border: 1px solid #333;
+        overflow: auto;
 
         &#textUiDis,
         &#textUiRead {
