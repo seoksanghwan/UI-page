@@ -202,11 +202,29 @@
       .default-box {
         width: 100%;
         margin-bottom: 10px;
+        position: relative;
+
+        span.placeHolder {
+          position: absolute;
+          top: 5px;
+          left: 20px;
+          color: #ac2245;
+          font-weight: bold;
+          z-index: 2;
+          font-size: 12px;
+          display: block;
+
+          &.active {
+            display: none;
+          }
+        }
 
         .box-section {
           width: 100%;
           float: left;
           position: relative;
+
+
 
           &.active {
             width: 85%;
@@ -216,6 +234,16 @@
             outline: #1ca7df;
 
             &::placeholder {
+              color: #ac2245;
+              font-weight: bold;
+            }
+
+            &:-ms-input-placeholder {
+              color: #ac2245;
+              font-weight: bold;
+            }
+
+            &::-ms-input-placeholder {
               color: #ac2245;
               font-weight: bold;
             }
@@ -264,6 +292,18 @@
         width: 100%;
         position: relative;
 
+        span.placeHolder {
+          position: absolute;
+          top: 5px;
+          left: 20px;
+          font-size: 12px;
+          display: block;
+
+          &.active {
+            display: none;
+          }
+        }
+
         em {
           position: absolute;
           bottom: 10px;
@@ -281,7 +321,7 @@
         font-size: 13px;
         border: 1px solid #222;
 
-        &:read-only {
+        &#textUiRead {
           background: #eee;
           outline: none;
         }

@@ -42,6 +42,21 @@ readOnlyEm.innerText = textLimit;
 
 var textValue, textLenght;
 
+var ieLowChecker = navigator.userAgent.indexOf('9.0') !== -1 ? true : false;
+
+if (ieLowChecker) {
+  var areaText = document.createElement('span');
+  areaText.innerText = '내용이 있을수도 있습니다.';
+  areaText.classList.add('placeHolder');
+
+  var areaText_readOnly = document.createElement('span');
+  areaText_readOnly.innerText = '읽기 전용 페이지입니다.';
+  areaText_readOnly.classList.add('placeHolder');
+
+  boxSection.appendChild(areaText);
+  readonlySection.appendChild(areaText_readOnly);
+}
+
 var orderOptionEvent = function () {
   textValue = defaultTextarea.value;
   textLenght = textValue.length;
@@ -50,12 +65,15 @@ var orderOptionEvent = function () {
     saveButton.classList.add('active');
     defaultTextarea.classList.add('active');
     defaultTextarea.parentElement.classList.add('active');
+    ieLowChecker ? areaText.classList.add('active') : null;
   } else {
     saveButton.classList.remove('active');
     defaultTextarea.classList.remove('active');
     defaultTextarea.parentElement.classList.remove('active');
     readOnlyTextarea.value = textValue;
     readOnlyEm.innerText = textLimit - textValue.length;
+    ieLowChecker ? areaText.classList.remove('active') : null;
+    ieLowChecker ? areaText_readOnly.classList.remove('active') : null;
   }
   defaultEm.innerText = lengthText > 0 ? lengthText : 0;
   defaultTextarea.value = defaultTextarea.value.slice(0, textLimit);
@@ -64,6 +82,7 @@ var orderOptionEvent = function () {
 var orderOptionSaveButton = function () {
   readOnlyTextarea.value = textValue;
   readOnlyEm.innerText = textLimit - textValue.length;
+  ieLowChecker ? areaText_readOnly.classList.add('active') : null;
 }
 
 defaultTextarea.addEventListener('keyup', orderOptionEvent);
