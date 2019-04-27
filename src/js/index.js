@@ -63,7 +63,7 @@ if (ieLowChecker) {
 
   boxSection.appendChild(areaText);
   readonlySection.appendChild(areaText_readOnly);
-  disabelSection.appendChild(areaText_readOnly);
+  disabelSection.appendChild(areaText_disabled);
 }
 
 var orderOptionEvent = function () {
