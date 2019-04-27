@@ -28,7 +28,7 @@ twoPoint.addEventListener('click', function (event) { return starPoint(event, st
 fourPoint.addEventListener('click', function (event) { return starPoint(event, starUiFour) });
 
 /*Textarea UI Js */
-var textLimit = 30;
+var textLimit = 500;
 var boxSection = document.querySelector('.caption-box .default-box')
 var defaultTextarea = boxSection.querySelector('.box-section #textUi');
 var defaultEm = boxSection.querySelector('.box-section em');
