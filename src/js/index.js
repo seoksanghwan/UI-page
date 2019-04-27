@@ -35,10 +35,14 @@ var saveButton = boxSection.querySelector('button');
 var readonlySection = document.querySelector('.readonly-box');
 var readOnlyTextarea = readonlySection.querySelector('#textUiRead');
 var readOnlyEm = readonlySection.querySelector('em');
+var disabelSection = document.querySelector('.disabel-box');
+var disabelTextarea = disabelSection.querySelector('#textUiDis');
+var disabelEm = disabelSection.querySelector('em');
 var textLimit = Number(defaultTextarea.getAttribute('maxLength'));
 
 defaultEm.innerText = textLimit;
 readOnlyEm.innerText = textLimit;
+disabelEm.innerText = textLimit;
 
 var textValue, textLenght, orderStorage;
 
@@ -50,11 +54,16 @@ if (ieLowChecker) {
   areaText.classList.add('placeHolder');
 
   var areaText_readOnly = document.createElement('span');
-  areaText_readOnly.innerText = '읽기 전용 페이지입니다.';
+  areaText_readOnly.innerText = '주문 요청사항을 입력해주세요. 읽기전용 입니다.';
   areaText_readOnly.classList.add('placeHolder');
+
+  var areaText_disabled = document.createElement('span');
+  areaText_disabled.innerText = '주문 요청사항을 입력해주세요. 비활성화 상태입니다.';
+  areaText_disabled.classList.add('placeHolder');
 
   boxSection.appendChild(areaText);
   readonlySection.appendChild(areaText_readOnly);
+  disabelSection.appendChild(areaText_readOnly);
 }
 
 var orderOptionEvent = function () {
@@ -78,16 +87,4 @@ var orderOptionEvent = function () {
   defaultTextarea.value = defaultTextarea.value.slice(0, textLimit);
 }
 
-var orderOptionSaveButton = function () {
-  readOnlyTextarea.value = textValue;
-  readOnlyEm.innerText = textLimit - textValue.length;
-  localStorage.setItem('order', textValue);
-  ieLowChecker ? areaText_readOnly.classList.add('active') : null;
-}
-
-orderStorage = localStorage.getItem('order');
-orderStorage !== null ? readOnlyTextarea.value = orderStorage : false;
-ieLowChecker ? ((orderStorage !== null) ? areaText_readOnly.classList.add('active') : areaText_readOnly.classList.remove('active')) : false;
-
 defaultTextarea.addEventListener('keyup', orderOptionEvent);
-saveButton.addEventListener('click', orderOptionSaveButton);
