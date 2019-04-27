@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import '../styles/common.scss';
 
 /*star rating UI Js */
