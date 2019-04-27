@@ -33,7 +33,7 @@
         overflow: hidden;
         border-radius: 5px;
         border: 1px solid #dadada;
-        margin-right: 15px;
+        margin-right: 10px;
         background: #f5f5f5;
 
         @include mq("tablet") {
@@ -51,7 +51,7 @@
 
         &.four-point {
           height: fit-content;
-          width: 35%;
+          width: 37%;
           margin-right: 0;
 
           @include mq("tablet") {
@@ -75,11 +75,14 @@
               float: left;
 
               &.img-box {
-                width: 39%;
+                width: 40%;
+                height: 100%;
+                position: relative;
               }
 
               &.info-box {
-                width: 60%;
+                width: 59%;
+                height: 100%;
               }
 
               .star-point {
@@ -106,6 +109,7 @@
 
             img {
               height: 100%;
+              display: block;
             }
           }
         }
@@ -206,7 +210,7 @@
 
         span.placeHolder {
           position: absolute;
-          top: 5px;
+          top: 10px;
           left: 20px;
           z-index: 2;
           font-size: 12px;
@@ -222,18 +226,12 @@
           float: left;
           position: relative;
 
-
-
           &.active {
-            width: 85%;
+            width: 90%;
           }
 
           textarea {
             outline: #1ca7df;
-
-            &.active {
-              border: 1px solid #1ca7df;
-            }
 
             &:focus {
               border: 1px solid #1ca7df;
@@ -250,14 +248,14 @@
         }
 
         button {
-          width: 15%;
+          width: 9.5%;
           overflow: hidden;
           height: 100px;
           padding: 0;
           margin: 0;
           outline: none;
           background: #fff;
-          float: left;
+          float: right;
           display: none;
 
           &.active {
@@ -279,7 +277,7 @@
 
         span.placeHolder {
           position: absolute;
-          top: 5px;
+          top: 10px;
           left: 20px;
           font-size: 12px;
           display: block;
@@ -326,6 +324,7 @@
             display: none;
           }
         }
+
         textarea {
           background: #fff;
 
@@ -382,7 +381,7 @@
 
       textarea {
         width: 100%;
-        padding: 5px 20px;
+        padding: 10px 20px;
         height: 100px;
         resize: none;
         font-size: 13px;
