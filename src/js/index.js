@@ -50,7 +50,7 @@ if (ieLowChecker) {
   areaText.classList.add('placeHolder');
 
   var areaText_readOnly = document.createElement('span');
-  areaText_readOnly.innerText = '읽기 전용 페이지입니다.';
+  areaText_readOnly.innerText = '주문 요청사항을 입력해주세요.';
   areaText_readOnly.classList.add('placeHolder');
 
   boxSection.appendChild(areaText);

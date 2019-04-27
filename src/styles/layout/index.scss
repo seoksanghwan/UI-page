@@ -208,8 +208,6 @@
           position: absolute;
           top: 5px;
           left: 20px;
-          color: #ac2245;
-          font-weight: bold;
           z-index: 2;
           font-size: 12px;
           display: block;
@@ -232,21 +230,6 @@
 
           textarea {
             outline: #1ca7df;
-
-            &::placeholder {
-              color: #ac2245;
-              font-weight: bold;
-            }
-
-            &:-ms-input-placeholder {
-              color: #ac2245;
-              font-weight: bold;
-            }
-
-            &::-ms-input-placeholder {
-              color: #ac2245;
-              font-weight: bold;
-            }
 
             &.active {
               border: 1px solid #1ca7df;
@@ -298,9 +281,29 @@
           left: 20px;
           font-size: 12px;
           display: block;
+          color: #ac2245;
+          font-weight: bold;
 
           &.active {
             display: none;
+          }
+
+        }
+
+        textarea {
+          &::placeholder {
+            color: #ac2245;
+            font-weight: bold;
+          }
+
+          &:-ms-input-placeholder {
+            color: #ac2245;
+            font-weight: bold;
+          }
+
+          &::-ms-input-placeholder {
+            color: #ac2245;
+            font-weight: bold;
           }
         }
 
