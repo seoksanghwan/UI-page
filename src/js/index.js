@@ -1,18 +1,19 @@
-import "@babel/polyfill";
 import '../styles/common.scss';
 
-/*star rating UI Js */
-const onePoint = document.querySelector('.one-point');
-const twoPoint = document.querySelector('.two-point');
-const fourPoint = document.querySelector('.four-point');
-const starUiOne = onePoint.querySelectorAll('.star-point ul li');
-const starUiTwo = twoPoint.querySelectorAll('.star-point ul li');
-const starUiFour = fourPoint.querySelectorAll('.star-point ul li');
+"use strict";
 
-const starPoint = (event, li) => {
-  const evpar = event.target;
-  const grade = Number(evpar.dataset.grade);
-  const active = document.querySelector('.active');
+/*star rating UI Js */
+var onePoint = document.querySelector('.one-point');
+var twoPoint = document.querySelector('.two-point');
+var fourPoint = document.querySelector('.four-point');
+var starUiOne = onePoint.querySelectorAll('.star-point ul li');
+var starUiTwo = twoPoint.querySelectorAll('.star-point ul li');
+var starUiFour = fourPoint.querySelectorAll('.star-point ul li');
+
+var starPoint = (event, li) => {
+  var evpar = event.target;
+  var grade = Number(evpar.dataset.grade);
+  var active = document.querySelector('.active');
   if (evpar.tagName === 'LI') {
     for (let i = 0; i < li.length; i++) {
       if (i <= grade) {
@@ -29,20 +30,20 @@ twoPoint.addEventListener('click', event => starPoint(event, starUiTwo));
 fourPoint.addEventListener('click', event => starPoint(event, starUiFour));
 
 /*Textarea UI Js */
-const boxSection = document.querySelector('.caption-box .default-box')
-const defaultTextarea = boxSection.querySelector('.box-section #textUi');
-const defaultEm = boxSection.querySelector('.box-section em');
-const saveButton = boxSection.querySelector('button');
-const readonlySection = document.querySelector('.readonly-box');
-const readOnlyTextarea = readonlySection.querySelector('#textUiRead');
-const readOnlyEm = readonlySection.querySelector('em');
+var boxSection = document.querySelector('.caption-box .default-box')
+var defaultTextarea = boxSection.querySelector('.box-section #textUi');
+var defaultEm = boxSection.querySelector('.box-section em');
+var saveButton = boxSection.querySelector('button');
+var readonlySection = document.querySelector('.readonly-box');
+var readOnlyTextarea = readonlySection.querySelector('#textUiRead');
+var readOnlyEm = readonlySection.querySelector('em');
 
 defaultEm.innerText = defaultTextarea.maxLength;
 readOnlyEm.innerText = defaultTextarea.maxLength;
 
 let textValue, textLenght;
 
-const orderOptionEvent = () => {
+var orderOptionEvent = () => {
   textValue = defaultTextarea.value;
   textLenght = textValue.length;
   if (textLenght > 0) {
@@ -59,7 +60,7 @@ const orderOptionEvent = () => {
   defaultEm.innerText = defaultTextarea.maxLength - textValue.length;
 }
 
-const orderOptionSaveButton = () => {
+var orderOptionSaveButton = () => {
   readOnlyTextarea.value = textValue;
   readOnlyEm.innerText = defaultTextarea.maxLength - textValue.length;
 }
