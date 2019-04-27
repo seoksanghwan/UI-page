@@ -1,7 +1,5 @@
 import '../styles/common.scss';
 
-"use strict";
-
 /*star rating UI Js */
 var onePoint = document.querySelector('.one-point');
 var twoPoint = document.querySelector('.two-point');
@@ -10,7 +8,7 @@ var starUiOne = onePoint.querySelectorAll('.star-point ul li');
 var starUiTwo = twoPoint.querySelectorAll('.star-point ul li');
 var starUiFour = fourPoint.querySelectorAll('.star-point ul li');
 
-var starPoint = (event, li) => {
+var starPoint = function (event, li) {
   var evpar = event.target;
   var grade = Number(evpar.dataset.grade);
   var active = document.querySelector('.active');
@@ -25,9 +23,9 @@ var starPoint = (event, li) => {
   }
 }
 
-onePoint.addEventListener('click', event => starPoint(event, starUiOne));
-twoPoint.addEventListener('click', event => starPoint(event, starUiTwo));
-fourPoint.addEventListener('click', event => starPoint(event, starUiFour));
+onePoint.addEventListener('click', function (event) { starPoint(event, starUiOne) });
+twoPoint.addEventListener('click', function (event) { starPoint(event, starUiTwo) });
+fourPoint.addEventListener('click', function (event) { starPoint(event, starUiFour) });
 
 /*Textarea UI Js */
 var boxSection = document.querySelector('.caption-box .default-box')
@@ -43,7 +41,7 @@ readOnlyEm.innerText = defaultTextarea.maxLength;
 
 let textValue, textLenght;
 
-var orderOptionEvent = () => {
+var orderOptionEvent = function () {
   textValue = defaultTextarea.value;
   textLenght = textValue.length;
   if (textLenght > 0) {
@@ -60,7 +58,7 @@ var orderOptionEvent = () => {
   defaultEm.innerText = defaultTextarea.maxLength - textValue.length;
 }
 
-var orderOptionSaveButton = () => {
+var orderOptionSaveButton = function () {
   readOnlyTextarea.value = textValue;
   readOnlyEm.innerText = defaultTextarea.maxLength - textValue.length;
 }
