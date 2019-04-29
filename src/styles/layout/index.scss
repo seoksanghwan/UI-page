@@ -94,7 +94,7 @@
 
                 div.star-raiting {
                   display: inline-block;
-                  width: fit-content;
+                  width: auto;
                   line-height: 15px;
                   vertical-align: middle;
                 }
@@ -195,7 +195,7 @@
 
         .img-box {
           width: 100%;
-          height: fit-content;
+          height: auto;
           overflow: hidden;
 
           img {
