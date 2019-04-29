@@ -24,9 +24,9 @@ const starPoint = (event, li) => {
   }
 }
 
-onePoint.addEventListener('click', () => { return starPoint(event, starUiOne) });
-twoPoint.addEventListener('click', () => { return starPoint(event, starUiTwo) });
-fourPoint.addEventListener('click', () => { return starPoint(event, starUiFour) });
+onePoint.addEventListener('click', event => { return starPoint(event, starUiOne) });
+twoPoint.addEventListener('click', event => { return starPoint(event, starUiTwo) });
+fourPoint.addEventListener('click', event => { return starPoint(event, starUiFour) });
 
 /*Textarea UI Js */
 const boxSection = document.querySelector('.caption-box .default-box')

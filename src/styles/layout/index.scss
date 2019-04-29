@@ -178,6 +178,9 @@
               border-radius: 100%;
               margin-right: 2px;
               border: none;
+              &:focus {
+                outline: 1px solid #89deff;
+              }
 
               &.active {
                 background: #ffa500;
@@ -292,7 +295,7 @@
           left: 20px;
           font-size: 12px;
           display: block;
-          color: #a52f4d8e;
+          color: rgba(165, 47, 77, 0.557);
           font-weight: bold;
 
           &.active {
@@ -357,21 +360,21 @@
 
       .disabel-box {
         textarea {
-          background: #9e9e9e48;
+          background: rgba(158, 158, 158, 0.282);
           border: 1px solid rgba(34, 34, 34, 0.2);
 
           &::placeholder {
-            color: #a52f4d8e;
+            color: rgba(165, 47, 77, 0.557);
             font-weight: bold;
           }
 
           &:-ms-input-placeholder {
-            color: #a52f4d8e;
+            color: rgba(165, 47, 77, 0.557);
             font-weight: bold;
           }
 
           &::-ms-input-placeholder {
-            color: #a52f4d8e;
+            color: rgba(165, 47, 77, 0.557);
             font-weight: bold;
           }
 
