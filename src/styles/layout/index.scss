@@ -1,7 +1,7 @@
 #wrap {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   margin: 20px auto;
-
 
   @include mq("tablet") {
     width: 90%;
@@ -9,9 +9,11 @@
 
   @include mq("mobile") {
     width: 90%;
+    min-width: 320px;
+    overflow: auto;
   }
 
-  >section {
+  > section {
     margin-bottom: 50px;
     height: 100%;
     display: block;
@@ -33,7 +35,7 @@
         overflow: hidden;
         border-radius: 5px;
         border: 1px solid #dadada;
-        margin-right: 10px;
+        margin-right: 9px;
         background: #f5f5f5;
 
         @include mq("tablet") {
@@ -57,7 +59,7 @@
 
           @include mq("tablet") {
             margin-top: 15px;
-            width: 67%;
+            width: 68%;
           }
 
           @include mq("mobile") {
@@ -90,7 +92,7 @@
                 position: absolute;
                 bottom: 5px;
 
-                ul {
+                div.star-raiting {
                   display: inline-block;
                   width: fit-content;
                   line-height: 15px;
@@ -163,11 +165,11 @@
           padding: 7px 8px;
           border-top: 1px solid #dadada;
 
-          ul {
+          div.star-raiting {
             width: 100%;
             height: 15px;
 
-            li {
+            button {
               width: 15px;
               display: inline-block;
               cursor: pointer;
@@ -175,6 +177,7 @@
               background: #9b9b9b;
               border-radius: 100%;
               margin-right: 2px;
+              border: none;
 
               &.active {
                 background: #ffa500;
@@ -204,7 +207,13 @@
 
     .caption-box {
       width: 100%;
-
+      label {
+        text-indent: -9999px;
+        display: block;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+      }
       .default-box {
         width: 100%;
         margin-bottom: 10px;
@@ -225,13 +234,13 @@
 
         .box-section {
           width: 100%;
+          height: 100%;
           float: left;
           position: relative;
 
           &.active {
             width: 90%;
           }
-
           textarea {
             outline: #1ca7df;
 
@@ -239,7 +248,6 @@
               border: 1px solid #1ca7df;
             }
           }
-
           em {
             position: absolute;
             bottom: 10px;
@@ -284,7 +292,7 @@
           left: 20px;
           font-size: 12px;
           display: block;
-          color: #ac2245;
+          color: #a52f4d8e;
           font-weight: bold;
 
           &.active {
@@ -319,7 +327,6 @@
       }
 
       .readonly-box {
-
         span.placeHolder {
           color: #2269ac;
 
@@ -378,7 +385,7 @@
         }
 
         em {
-          opacity: .6;
+          opacity: 0.6;
         }
       }
 
@@ -398,5 +405,4 @@
       }
     }
   }
-
 }

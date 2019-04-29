@@ -7,7 +7,6 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>IDUS UI</title>
-  <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
 
 <body>
@@ -30,13 +29,13 @@
               <p>Hilight <em>Cross Out</em></p>
             </div>
             <div class="star-point">
-              <ul>
-                <li data-grade="0"></li>
-                <li data-grade="1"></li>
-                <li data-grade="2"></li>
-                <li data-grade="3"></li>
-                <li data-grade="4"></li>
-              </ul>
+              <div class="star-raiting">
+                <button type="button" data-grade="0"></button>
+                <button type="button" data-grade="1"></button>
+                <button type="button" data-grade="2"></button>
+                <button type="button" data-grade="3"></button>
+                <button type="button" data-grade="4"></button>
+              </div>
               <small>Lorem ipsum dolor sit amet...</small>
             </div>
           </div>
@@ -56,13 +55,13 @@
               <p>Hilight <em>Cross Out</em></p>
             </div>
             <div class="star-point">
-              <ul>
-                <li data-grade="0"></li>
-                <li data-grade="1"></li>
-                <li data-grade="2"></li>
-                <li data-grade="3"></li>
-                <li data-grade="4"></li>
-              </ul>
+              <div class="star-raiting">
+                <button type="button" data-grade="0"></button>
+                <button type="button" data-grade="1"></button>
+                <button type="button" data-grade="2"></button>
+                <button type="button" data-grade="3"></button>
+                <button type="button" data-grade="4"></button>
+              </div>
             </div>
           </div>
         </div>
@@ -99,13 +98,13 @@
                 </p>
               </div>
               <div class="star-point">
-                <ul>
-                  <li data-grade="0"></li>
-                  <li data-grade="1"></li>
-                  <li data-grade="2"></li>
-                  <li data-grade="3"></li>
-                  <li data-grade="4"></li>
-                </ul>
+                <div class="star-raiting">
+                  <button type="button" data-grade="0"></button>
+                  <button type="button" data-grade="1"></button>
+                  <button type="button" data-grade="2"></button>
+                  <button type="button" data-grade="3"></button>
+                  <button type="button" data-grade="4"></button>
+                </div>
                 <small>| John Doe</small>
               </div>
             </div>
@@ -119,17 +118,25 @@
       <div class="caption-box">
         <div class="default-box">
           <div class="box-section">
-            <textarea name="textUi" id="textUi" cols="30" rows="10" minlength="0" maxlength="500" placeholder="내용이 있을수도 있습니다."></textarea>
-            <em></em>
+            <from id="boxValueForm">
+              <label for="textUi">입력창</label>
+              <textarea name="textUi" id="textUi" cols="30" rows="10" minlength="0" maxlength="500"
+                placeholder="내용이 있을수도 있습니다."></textarea>
+              <em></em>
+            </from>
           </div>
-          <button>저장</button>
+          <button type="submit" form="boxValueForm" value="Submit">저장</button>
         </div>
         <div class="readonly-box">
-          <textarea name="textUiRead" id="textUiRead" cols="30" rows="10" minlength="0" maxlength="500" readonly placeholder="주문 요청사항을 입력해주세요. 읽기전용 입니다."></textarea>
+          <label for="textUiRead">읽기전용창</label>
+          <textarea name="textUiRead" id="textUiRead" cols="30" rows="10" minlength="0" maxlength="500" readonly
+            placeholder="주문 요청사항을 입력해주세요. 읽기전용 입니다."></textarea>
           <em></em>
         </div>
         <div class="disabel-box">
-          <textarea name="textUiDis" id="textUiDis" cols="30" rows="10" minlength="0" maxlength="500" disabled placeholder="주문 요청사항을 입력해주세요. 비활성화 상태입니다."></textarea>
+          <label for="textUiDis">비활성화 창</label>
+          <textarea name="textUiDis" id="textUiDis" cols="30" rows="10" minlength="0" maxlength="500" disabled
+            placeholder="주문 요청사항을 입력해주세요. 비활성화 상태입니다."></textarea>
           <em></em>
         </div>
       </div>

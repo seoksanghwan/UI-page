@@ -1,18 +1,20 @@
+import "@babel/polyfill";
 import '../styles/common.scss';
 
 // /*star rating UI Js */
+const wrap = document.querySelector('#wrap');
 var onePoint = document.querySelector('.one-point');
 var twoPoint = document.querySelector('.two-point');
 var fourPoint = document.querySelector('.four-point');
-var starUiOne = onePoint.querySelectorAll('.star-point ul li');
-var starUiTwo = twoPoint.querySelectorAll('.star-point ul li');
-var starUiFour = fourPoint.querySelectorAll('.star-point ul li');
+var starUiOne = onePoint.querySelectorAll('.star-point .star-raiting button');
+var starUiTwo = twoPoint.querySelectorAll('.star-point .star-raiting button');
+var starUiFour = fourPoint.querySelectorAll('.star-point .star-raiting button');
 
 var starPoint = function (event, li) {
   var evpar = event.target;
   var grade = Number(evpar.getAttribute('data-grade'));
   var active = document.querySelector('.active');
-  if (evpar.tagName === 'LI') {
+  if (evpar.tagName === 'BUTTON') {
     for (let i = 0; i < li.length; i++) {
       if (i <= grade) {
         li[i].classList.add('active');
@@ -64,6 +66,15 @@ if (ieLowChecker) {
   boxSection.appendChild(areaText);
   readonlySection.appendChild(areaText_readOnly);
   disabelSection.appendChild(areaText_disabled);
+
+  readOnlyTextarea.addEventListener('focusin', function () {
+    areaText.classList.add('active');
+    areaText_readOnly.classList.add('active');
+  });
+  readOnlyTextarea.addEventListener('focusout', function () {
+    areaText.classList.add('active');
+    areaText_readOnly.classList.remove('active');
+  });
 }
 
 var orderOptionEvent = function () {
@@ -74,13 +85,13 @@ var orderOptionEvent = function () {
     ieLowChecker ? areaText.classList.add('active') : null;
     saveButton.classList.add('active');
     defaultTextarea.classList.add('active');
-    defaultTextarea.parentElement.classList.add('active');
+    defaultTextarea.parentElement.parentElement.classList.add('active');
   } else {
     ieLowChecker ? areaText.classList.remove('active') : null;
     ieLowChecker ? areaText_readOnly.classList.remove('active') : null;
     saveButton.classList.remove('active');
     defaultTextarea.classList.remove('active');
-    defaultTextarea.parentElement.classList.remove('active');
+    defaultTextarea.parentElement.parentElement.classList.remove('active');
     readOnlyEm.innerText = textLimit - textValue.length;
   }
   defaultEm.innerText = lengthText > 0 ? lengthText : 0;
